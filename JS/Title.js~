@@ -1,0 +1,40 @@
+window.onload = ( function(){
+	
+	Crafty.scene("Title", function(){
+	Crafty.init(480,800);
+	Crafty.background("url('Images/titlescreen.png')");
+	
+	var play = Crafty.e("2D, DOM, Tween, Image, Mouse")
+	.image("Images/but1.png")
+	.attr({x:0, y:250})
+	.bind("MouseOver", function()
+	{
+		this.image("Images/hover1.png");
+	})
+	.bind("MouseOut", function(){
+		this.image("Images/but1.png");
+	})
+	.bind("Click", function(){
+		Crafty.scene("levelSelect");
+	});
+	
+/*var space = Crafty.e("2D, DOM, Tween, Image, Color")
+.attr({x:320, y:250, w:160, h:160})
+.color("black");
+
+var zone = Crafty.e("2D, DOM, Tween, Image, Color")
+.attr({x:160, y:250, w:160, h:160})
+.color("teal");
+
+var block = Crafty.e("2D, DOM, Tween, Image, Color")
+.attr({x:0, y:250, w:160, h:160})
+.color("grey");*/
+	
+});
+var assetsObj = { "images": ["Images/about.png", "Images/ported.png", "Images/gameOver.png", "Images/result.png", "Images/back.jpg", "Images/sanchit.jpg", "Images/bg.jpg", "Images/floatingLeaves.png", "Images/howToPlay.png", "Images/play.png", "Images/greenleaf.png", "Images/orangeleaf.png", "Images/score.png", "Images/screen.png", "Images/turnGreen.png", "Images/turnOrange.png"]}
+	
+	Crafty.load(assetsObj, function() {
+	Crafty.scene("Title");
+	});
+
+});
