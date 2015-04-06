@@ -18,20 +18,11 @@ window.onload = ( function(){
 		Crafty.scene("levelSelect");
 	});
 	
-/*var space = Crafty.e("2D, DOM, Tween, Image, Color")
-.attr({x:320, y:250, w:160, h:160})
-.color("black");
-
-var zone = Crafty.e("2D, DOM, Tween, Image, Color")
-.attr({x:160, y:250, w:160, h:160})
-.color("teal");
-
-var block = Crafty.e("2D, DOM, Tween, Image, Color")
-.attr({x:0, y:250, w:160, h:160})
-.color("grey");*/
+var ported = Crafty.e("2D, DOM, Image")
+.attr({x:130, y:755}).image("Images/ported.png");
 	
 });
-var assetsObj = { "images": ["Images/about.png", "Images/ported.png", "Images/gameOver.png", "Images/result.png", "Images/back.jpg", "Images/sanchit.jpg", "Images/bg.jpg", "Images/floatingLeaves.png", "Images/howToPlay.png", "Images/play.png", "Images/greenleaf.png", "Images/orangeleaf.png", "Images/score.png", "Images/screen.png", "Images/turnGreen.png", "Images/turnOrange.png"]}
+var assetsObj = { "images": ["Images/ball.png", "Images/but1.png", "Images/block.png", "Images/but2.png", "Images/empty.png", "Images/hover1.png", "Images/levelButton.png", "Images/levelButtonHover.png", "Images/scen.png", "Images/titlescreen.png", "Images/zone.png"] }
 	
 	Crafty.load(assetsObj, function() {
 	Crafty.scene("Title");

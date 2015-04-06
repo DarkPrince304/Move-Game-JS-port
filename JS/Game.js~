@@ -57,16 +57,24 @@ var back = Crafty.e("2D, DOM, Image, Mouse");
 var replay = Crafty.e("2D, DOM, Image, Mouse");
 
 game.bind("KeyDown", function(e){
-	moves++;
 	game.text("Moves: "+moves);
 	if(e.key==87)
+	{
 	moveUp();
-	else if(e.key == 83)
+	moves++;
+	}
+	else if(e.key == 83){
 	moveDown();
-	else if(e.key == 65)
+	moves++;
+	}
+	else if(e.key == 65){
 	moveLeft();
-	else if(e.key == 68)
+	moves++;
+	}
+	else if(e.key == 68){
 	moveRight();
+	moves++;
+	}
 });
 
 checkGame = function(){
@@ -371,13 +379,26 @@ for(i=0;i<3;i++)
 	
 
 replay.attr({x:160, y:732}).image("Images/replay.png")
+.bind("MouseOver", function(){
+this.image("Images/replayHover.png");
+})
+.bind("MouseOut", function(){
+this.image("Images/replay.png");
+})
 .bind("Click", function(){
 Crafty.scene("Game");
 });
 back.attr({x:320, y:732}).image("Images/back.png")
+.bind("MouseOver", function(){
+this.image("Images/backHover.png");
+})
+.bind("MouseOut", function(){
+this.image("Images/back.png");
+})
 .bind("Click", function(){
 Crafty.scene("levelSelect");
 });
+
 
 game.attr({x:10,y:750})
 .text("Moves: "+moves)
