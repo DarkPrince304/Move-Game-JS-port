@@ -6,45 +6,45 @@ Crafty.background("url('Images/titlescreen.png')");
 		var a=1;
 		
 		if(number==1)
-		Level = [ [2,0,1], [2,0,1], [2,0,1] ];
+		Level = [ [2,0,1], [2,0,1], [2,0,1] ]; //1
 		else if(number==2)
-		Level = [ [1,4,1], [0,3,0], [2,0,2] ];
+		Level = [ [1,4,1], [0,3,0], [2,0,2] ]; //2
 		else if(number==3)
-		Level = [ [3,1,3], [4,1,3], [2,2,0] ];
+		Level = [ [3,1,3], [4,1,3], [2,2,0] ]; //3
 		else if(number==4)
-		Level = [ [2,1,1], [2,3,3], [2,1,3] ];
+		Level = [ [3,3,3], [0,2,4], [0,4,1] ]; //20
 		else if(number==5)
 		Level = [ [4,2,0], [4,0,3], [1,3,0] ];
 		else if(number==6)
-		Level = [ [1,3,1], [1,2,0], [2,2,3] ];
+		Level = [ [1,3,1], [1,2,0], [2,2,3] ]; //26
 		else if(number==7)
-		Level = [ [2,0,3], [2,2,3], [1,1,1] ];
+		Level = [ [2,0,3], [2,2,3], [1,1,1] ]; //31
 		else if(number==8)
-		Level = [ [0,0,1], [0,2,4], [3,3,4] ];
+		Level = [ [0,0,1], [0,2,4], [3,3,4] ]; //36
 		else if(number==9)
-		Level = [ [4,1,3], [4,3,2], [0,0,0] ];
+		Level = [ [4,1,3], [4,3,2], [0,0,0] ]; //41
 		else if(number==10)
-		Level = [ [1,4,1], [3,2,3], [0,2,0] ];
+		Level = [ [1,4,1], [3,2,3], [0,2,0] ]; //46
 		else if(number==11)
-		Level = [ [0,0,1], [2,3,1], [3,2,4] ];
+		Level = [ [4,2,3], [1,0,2], [1,0,3] ]; //30
 		else if(number==12)
-		Level = [ [0,2,1], [2,3,1], [3,3,4] ];
+		Level = [ [4,4,1], [3,2,0], [0,0,3] ]; //35
 		else if(number==13)
-		Level = [ [3,1,1], [2,2,3], [2,0,1] ];
+		Level = [ [2,1,1], [2,3,1], [2,3,3] ]; //40
 		else if(number==14)
-		Level = [ [1,0,0], [4,0,3], [4,2,3] ];
+		Level = [ [0,2,1], [2,3,4], [0,3,1] ]; //45
 		else if(number==15)
-		Level = [ [3,2,0], [3,3,0], [4,4,1] ];
+		Level = [ [1,1,2], [1,3,2], [3,0,2] ]; //50
 		else if(number==16)
 		Level = [ [1,4,1], [0,2,0], [2,3,3] ];
 		else if(number==17)
-		Level = [ [2,0,1], [2,3,1], [3,2,1] ];
+		Level = [ [3,0,1], [2,2,1], [2,3,1] ];
 		else if(number==18)
 		Level = [ [3,0,1], [0,2,4], [3,2,1] ];
 		else if(number==19)
-		Level = [ [1,3,2], [1,2,2], [1,3,0] ];
+		Level = [ [0,4,4], [3,0,1], [2,0,3] ]; //57
 		else if(number==20)
-		Level = [ [3,0,1], [2,2,1], [2,3,1] ];
+		Level = [ [2,3,3], [2,0,0], [4,1,1] ]; //63
 
 /*var yo = Crafty.e("2D, DOM, Text")
 
@@ -57,27 +57,24 @@ var back = Crafty.e("2D, DOM, Image, Mouse");
 var replay = Crafty.e("2D, DOM, Image, Mouse");
 
 game.bind("KeyDown", function(e){
-	game.text("Moves: "+moves);
 	if(e.key==87)
 	{
 	moveUp();
-	moves++;
 	}
 	else if(e.key == 83){
 	moveDown();
-	moves++;
 	}
 	else if(e.key == 65){
 	moveLeft();
-	moves++;
 	}
 	else if(e.key == 68){
 	moveRight();
-	moves++;
 	}
+	game.text("Moves: "+moves);
 });
 
 checkGame = function(){
+
 var point=0;
 for(x=0;x<3;x++)
 	{
@@ -92,6 +89,7 @@ alert("You win!");
 }
 
 moveUp = function(){
+	count=0;
 
 for(i=1,p=0;i<=2;i++,p++)
 	{
@@ -108,6 +106,10 @@ for(i=1,p=0;i<=2;i++,p++)
 				ballLocation[j][i-1]=temp;
 				ballLocation[j][i]=0;
 				checkGame();
+				if(count==0){
+				moves++;
+				count++;
+			}
 				}
 			else if(Level[j][i-1]==2)
 				{
@@ -118,6 +120,10 @@ for(i=1,p=0;i<=2;i++,p++)
 				ballLocation[j][i-1]=temp;
 				ballLocation[j][i]=0;
 				checkGame();
+				if(count==0){
+				moves++;
+				count++;
+			}
 				}
 			}
 		else if(Level[j][i]==4)
@@ -131,6 +137,10 @@ for(i=1,p=0;i<=2;i++,p++)
 				ballLocation[j][i-1]=temp;
 				ballLocation[j][i]=0;
 				checkGame();
+				if(count==0){
+				moves++;
+				count++;
+			}
 				}
 			else if(Level[j][i-1]==2)
 				{
@@ -141,6 +151,10 @@ for(i=1,p=0;i<=2;i++,p++)
 				ballLocation[j][i-1]=temp;
 				ballLocation[j][i]=0;
 				checkGame();
+				if(count==0){
+				moves++;
+				count++;
+			}
 				}
 			}
 		}
@@ -150,7 +164,7 @@ for(i=1,p=0;i<=2;i++,p++)
 }
 		
 moveDown = function(){
-
+count=0;
 		//var yo = Crafty.e("2D, DOM, Text")
 		//alert("Before\n"+Level+"\n"+ballLocation);
 for(i=1,p=2;i>=0;i--,p--)
@@ -168,6 +182,10 @@ for(i=1,p=2;i>=0;i--,p--)
 				ballLocation[j][i+1]=temp;
 				ballLocation[j][i]=0;
 				checkGame();
+				if(count==0){
+				moves++;
+				count++;
+			}
 				}
 			else if(Level[j][i+1]==2)
 				{
@@ -178,6 +196,10 @@ for(i=1,p=2;i>=0;i--,p--)
 				ballLocation[j][i+1]=temp;
 				ballLocation[j][i]=0;
 				checkGame();
+				if(count==0){
+				moves++;
+				count++;
+			}
 				}
 			}
 		else if(Level[j][i]==4)
@@ -191,6 +213,10 @@ for(i=1,p=2;i>=0;i--,p--)
 				ballLocation[j][i+1]=temp;
 				ballLocation[j][i]=0;
 				checkGame();
+				if(count==0){
+				moves++;
+				count++;
+			}
 				}
 			else if(Level[j][i+1]==2)
 				{
@@ -201,6 +227,10 @@ for(i=1,p=2;i>=0;i--,p--)
 				ballLocation[j][i+1]=temp;
 				ballLocation[j][i]=0;
 				checkGame();
+				if(count==0){
+				moves++;
+				count++;
+			}
 				}
 			}
 		}
@@ -210,7 +240,7 @@ for(i=1,p=2;i>=0;i--,p--)
 }
 
 moveLeft = function(){
-
+count=0;
 for(i=1,p=0;i<=2;i++,p++)
 	{
 	for(j=2;j>=0;j--)
@@ -226,6 +256,10 @@ for(i=1,p=0;i<=2;i++,p++)
 				ballLocation[i-1][j]=temp;
 				ballLocation[i][j]=0;
 				checkGame();
+				if(count==0){
+				moves++;
+				count++;
+			}			
 				}
 			else if(Level[i-1][j]==2)
 				{
@@ -236,6 +270,10 @@ for(i=1,p=0;i<=2;i++,p++)
 				ballLocation[i-1][j]=temp;
 				ballLocation[i][j]=0;
 				checkGame();
+				if(count==0){
+				moves++;
+				count++;
+			}
 				}
 			}
 		else if(Level[i][j]==4)
@@ -249,6 +287,10 @@ for(i=1,p=0;i<=2;i++,p++)
 				ballLocation[i-1][j]=temp;
 				ballLocation[i][j]=0;
 				checkGame();
+				if(count==0){
+				moves++;
+				count++;
+			}
 				}
 			else if(Level[i-1][j]==2)
 				{
@@ -259,6 +301,10 @@ for(i=1,p=0;i<=2;i++,p++)
 				ballLocation[i-1][j]=temp;
 				ballLocation[i][j]=0;
 				checkGame();
+				if(count==0){
+				moves++;
+				count++;
+			}
 				}
 			}
 		}
@@ -268,7 +314,7 @@ for(i=1,p=0;i<=2;i++,p++)
 }
 
 moveRight = function(){
-
+count=0;
 for(i=1,p=2;i>=0;i--,p--)
 	{
 	for(j=2;j>=0;j--)
@@ -284,6 +330,10 @@ for(i=1,p=2;i>=0;i--,p--)
 				ballLocation[i+1][j]=temp;
 				ballLocation[i][j]=0;
 				checkGame();
+				if(count==0){
+				moves++;
+				count++;
+			}
 				}
 			else if(Level[i+1][j]==2)
 				{
@@ -294,6 +344,10 @@ for(i=1,p=2;i>=0;i--,p--)
 				ballLocation[i+1][j]=temp;
 				ballLocation[i][j]=0;
 				checkGame();
+				if(count==0){
+				moves++;
+				count++;
+			}
 				}
 			}
 		else if(Level[i][j]==4)
@@ -307,6 +361,10 @@ for(i=1,p=2;i>=0;i--,p--)
 				ballLocation[i+1][j]=temp;
 				ballLocation[i][j]=0;
 				checkGame();
+				if(count==0){
+				moves++;
+				count++;
+			}
 				}
 			else if(Level[i+1][j]==2)
 				{
@@ -317,6 +375,10 @@ for(i=1,p=2;i>=0;i--,p--)
 				ballLocation[i+1][j]=temp;
 				ballLocation[i][j]=0;
 				checkGame();
+				if(count==0){
+				moves++;
+				count++;
+			}
 				}
 			}
 		}
